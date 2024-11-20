@@ -36,10 +36,14 @@ const App = () => {
     setServerError("");
 
     try {
-      const { data } = await axios.post(`${SERVER_URL}/api/v1/urls`, {
-        original: form.original,
-        shorten: form.slug,
-      });
+      const { data } = await axios.post(
+        `${SERVER_URL}/api/v1/urls`,
+        {
+          original: form.original,
+          shorten: form.slug,
+        },
+        { headers: { "Access-Control-Allow-Origin": "*" } }
+      );
 
       setShortLink(`${SERVER_URL}/${data.shorten}`);
       reset();
