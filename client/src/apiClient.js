@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const BASE_URL = "http://localhost:8000";
+export const BASE_URL = "https://lnk.free.nf";
 
 const apiClient = axios.create({
   baseURL: BASE_URL,
